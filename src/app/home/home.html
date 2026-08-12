@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="javascript:void(0)">
+            <img style="height:40px;width:60px;" src="assets/logo.png" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+
+            <!-- Left Menu -->
+            <ul class="navbar-nav me-auto">
+
+                @for (item of filteredMenus; track $index) {
+                <li class="nav-item">
+                    <a class="nav-link"
+                    routerLink="/{{item.routeName}}"
+                    routerLinkActive="active">
+                        {{item.label}}
+                    </a>
+                </li>
+                }
+
+                <!-- Lessons Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                        Lessons
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/installation">1. Installation</a></li>
+                        <li><a class="dropdown-item" routerLink="/variables">2. Variables</a></li>
+                        <li><a class="dropdown-item" routerLink="/components">3. Components</a></li>
+                        <li><a class="dropdown-item" routerLink="/bindings">4. Bindings</a></li>
+                        <li><a class="dropdown-item" routerLink="/routing">5. Routing</a></li>
+                        <li><a class="dropdown-item" routerLink="/directives">6. Directives</a></li>
+                        <li><a class="dropdown-item" routerLink="/control-flows">7. Control Flows</a></li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle">8. Forms</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" routerLink="/template-forms">8a. Template Forms</a></li>
+                                <li><a class="dropdown-item" routerLink="/reactive-forms">8b. Reactive Forms</a></li>
+                                <li><a class="dropdown-item" routerLink="/signal-forms">8c. Signal Forms</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class="dropdown-item" routerLink="/signals">9. Signals</a></li>
+                        <li><a class="dropdown-item" routerLink="/pipes">10. Pipes</a></li>
+                        <li><a class="dropdown-item" routerLink="/crud-ops">11. CRUD Operations</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="d-flex align-items-center">
+
+                <form class="d-flex me-4">
+                    <input class="form-control me-2" placeholder="Search">
+                    <button class="btn btn-primary">Search</button>
+                </form>
+
+                <span class="navbar-text text-white me-3">
+                    Hi {{userName}}
+                </span>
+
+                <a class="nav-link text-white" href="javascript:void(0)" (click)="logout()">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+<div class="container-fluid mt-3">
+    <router-outlet></router-outlet>
+</div>

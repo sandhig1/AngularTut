@@ -1,0 +1,263 @@
+<h4 class="mb-3">Lesson 8b) <u>Reactive-Forms</u></h4>
+<div class="row">
+    <div class="col-lg-6">
+        <span>Reactive-Forms Using : </span>
+        <input type = "radio" id="formgroup" [checked]="formtype=='FG'" (click)="setFormType('FG')"><label for="formgroup" style="cursor: pointer;">Form Group</label>
+        &nbsp;
+        <input type = "radio" id="formbuilder" [checked]="formtype=='FB'" (click)="setFormType('FB')"><label for="formbuilder" style="cursor: pointer;">Form Builder</label>
+    </div>
+</div>
+<!--------------------->
+<!--Using Form Group-->
+<div class="row mb-2" [hidden]="formtype!='FG'">
+    <div class="col-lg-12">
+        <mat-tab-group>
+            <mat-tab label="Theory">
+                <p>Content of Reactive-Forms using <b>Form Group</b> theories goes here.</p>
+            </mat-tab>
+            <mat-tab label="Example">
+                <div class="row mt-4">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header bg-primary">User List</div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header bg-primary">Add User</div>
+                            <div class="card-body">
+                                <form [formGroup]="userForm">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label for="username" class="form-label">User Name</label>
+                                            <input type="text" id="username" name="username" 
+                                                formControlName = "UserName"
+                                                class="form-control" placeholder="Enter User Name"
+                                                required minlength="6" maxlength="12">
+
+                                                @if(userForm.controls["UserName"].invalid && (userForm.controls["UserName"].touched || userForm.controls["UserName"].dirty)){
+                                                    @if(userForm.controls["UserName"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">User Name is required ***</span>
+                                                    }
+                                                    @else if(userForm.controls["UserName"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Length should be >= 6 ***</span>
+                                                    }
+                                                    @else if(userForm.controls["UserName"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Length should be <= 100 ***</span>
+                                                    }
+                                                }
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="fullname" class="form-label">Full Name</label>
+                                            <input type="text" id="fullname" name="fullname" 
+                                                formControlName = "FullName"
+                                                class="form-control" placeholder="Enter Full Name"
+                                                required minlength="10" maxlength="100">
+
+                                                @if(userForm.controls["FullName"].invalid && (userForm.controls["FullName"].touched || userForm.controls["FullName"].dirty)){
+                                                    @if(userForm.controls["FullName"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Full Name is required ***</span>
+                                                    }
+                                                    @else if(userForm.controls["FullName"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Full Name should be >= 10 ***</span>
+                                                    }
+                                                    @else if(userForm.controls["FullName"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Full Name should be <= 200 ***</span>
+                                                    }
+                                                }
+                                        </div>
+                                         
+                                        <div class="col-lg-12">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" rows="3" id="address" name="address" 
+                                                formControlName = "Address"
+                                                class="form-control" placeholder="Enter Address"
+                                                required minlength="10" maxlength="100">
+
+                                                @if(userForm.controls["Address"].invalid && (userForm.controls["Address"].touched || userForm.controls["Address"].dirty)){
+                                                    @if(userForm.controls["Address"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address is required ***</span>
+                                                    }
+                                                    @else if(userForm.controls["Address"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address should be >= 10 ***</span>
+                                                    }
+                                                    @else if(userForm.controls["Address"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address should be <= 200 ***</span>
+                                                    }
+                                                }
+                                        </div>
+                                        <div class="col-lg-6 mt-3">
+                                            <label for="phoneno" class="form-label">Phone No.</label>
+                                            <input type="text" id="phoneno" name="phoneno" 
+                                                formControlName = "PhoneNo" 
+                                                class="form-control" placeholder="Enter Phon No."
+                                                required minlength="10" maxlength="10">
+
+                                                @if(userForm.controls["PhoneNo"].invalid && (userForm.controls["PhoneNo"].touched || userForm.controls["PhoneNo"].dirty)){
+                                                    @if(userForm.controls["PhoneNo"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. is required ***</span>
+                                                    }
+                                                    @else if(userForm.controls["PhoneNo"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. should be >= 10 ***</span>
+                                                    }
+                                                    @else if(userForm.controls["PhoneNo"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. should be <= 200 ***</span>
+                                                    }
+                                                }
+                                        </div>
+                                        <div class="col-lg-6 mt-3">
+                                            <label for="emailadd" class="form-label">Email Address</label>
+                                            <input type="text" id="emailadd" name="emailadd" 
+                                                formControlName="EmailAdd"
+                                                class="form-control" placeholder="Enter Email Add"
+                                                required minlength="5" maxlength="100">
+
+                                                @if(userForm.controls["EmailAdd"].invalid && (userForm.controls["EmailAdd"].touched || userForm.controls["EmailAdd"].dirty)){
+                                                    @if(userForm.controls["EmailAdd"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address is required ***</span>
+                                                    }
+                                                    @else if(userForm.controls["EmailAdd"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address should be >= 12 ***</span>
+                                                    }
+                                                    @else if(userForm.controls["EmailAdd"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address should be <= 100 ***</span>
+                                                    }
+                                                }
+                                        </div>
+                                        
+                                        <div class="col-lg-12 mt-3 text-center">
+                                            <button type="submit" class="btn btn-primary" 
+                                                [disabled]="userForm.invalid" (click)="saveUser()" 
+                                                style="cursor: pointer!important">Save</button>&nbsp;
+                                            <button type="reset" class="btn btn-warning" style="cursor: pointer!important;"> Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<!--------------------->
+<!--Using FormBuilder-->
+<div class="row mb-2" [hidden]="formtype!='FB'">
+    <div class="col-lg-12">
+        <mat-tab-group>
+            <mat-tab label="Theory">
+                <p>Content of Reactive-Forms using <b>Form Builder</b> theories goes here.</p>
+            </mat-tab>
+            <mat-tab label="Example">
+                <div class="row mt-4">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header bg-primary">User List</div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header bg-primary">Add User</div>
+                            <div class="card-body">
+                                <form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label for="studname" class="form-label">Student Name</label>
+                                            <input type="text" id="studname" name="username" 
+                                                formControlName = "StudentName"
+                                                class="form-control" placeholder="Enter Student Name"
+                                                required minlength="6" maxlength="12">
+
+                                                <!--@if(studentForm.controls["StudentName"].invalid && (userForm.controls["StudentName"].touched || userForm.controls["StudentName"].dirty)){
+                                                    @if(studentForm.controls["StudentName"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Student Name is required ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["StudentName"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Length should be >= 6 ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["StudentName"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Length should be <= 100 ***</span>
+                                                    }
+                                        }-->
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" id="address" name="address" 
+                                                formControlName = "Address"
+                                                class="form-control" placeholder="Enter Address"
+                                                required minlength="10" maxlength="100">
+
+                                                <!--@if(studentForm.controls["Address"].invalid && (userForm.controls["Address"].touched || userForm.controls["Address"].dirty)){
+                                                    @if(studentForm.controls["Address"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address is required ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["Address"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address should be >= 10 ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["Address"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Address should be <= 200 ***</span>
+                                                    }
+                                        }-->
+                                        </div>
+                                        <div class="col-lg-6 mt-3">
+                                            <label for="phoneno" class="form-label">Phone No.</label>
+                                            <input type="text" id="phoneno" name="phoneno" 
+                                                formControlName = "PhoneNo" 
+                                                class="form-control" placeholder="Enter Phon No."
+                                                required minlength="10" maxlength="10">
+
+                                                <!--@if(studentForm.controls["PhoneNo"].invalid && (studentForm.controls["PhoneNo"].touched || studentForm.controls["PhoneNo"].dirty)){
+                                                    @if(studentForm.controls["PhoneNo"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. is required ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["PhoneNo"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. should be >= 10 ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["PhoneNo"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Phone No. should be <= 200 ***</span>
+                                                    }
+                                        }-->
+                                        </div>
+                                        <div class="col-lg-6 mt-3">
+                                            <label for="emailadd" class="form-label">Email Address</label>
+                                            <input type="text" id="emailadd" name="emailadd" 
+                                                formControlName="EmailAdd"
+                                                class="form-control" placeholder="Enter Email Add"
+                                                required minlength="5" maxlength="100">
+
+                                                <!--@if(studentForm.controls["EmailAdd"].invalid && (studentForm.controls["EmailAdd"].touched || studentForm.controls["EmailAdd"].dirty)){
+                                                    @if(studentForm.controls["EmailAdd"].errors?.['required']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address is required ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["EmailAdd"].errors?.['minlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address should be >= 12 ***</span>
+                                                    }
+                                                    @else if(studentForm.controls["EmailAdd"].errors?.['maxlength']){
+                                                        <span class="text text-danger" style="font-size: 12px;padding-left:5px">Email Address should be <= 100 ***</span>
+                                                    }
+                                        }-->
+                                        </div>
+                                        
+                                        <div class="col-lg-12 mt-3 text-center">
+                                            <button type="submit" class="btn btn-primary" 
+                                                [disabled]="studentForm.invalid"
+                                                style="cursor: pointer!important">Save</button>&nbsp;
+                                            <button type="reset" class="btn btn-warning" style="cursor: pointer!important;"> Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

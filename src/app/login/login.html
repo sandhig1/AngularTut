@@ -1,0 +1,80 @@
+<div class="login-wrapper">
+
+    <!-- Left Side -->
+    <div class="left-panel">
+
+        <div class="content">
+
+            <img src="/assets/logo.png" class="logo">
+
+            <h1>{{title()}}</h1>
+
+            <p>
+                Installation, Component, Routing, Binding, 
+                Directives, Control Statements, Template-Form, Reactive-Form,  
+                Pipes, Signal, CRUD Operations
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+
+        <div class="login-card">
+
+            <h2>Welcome Back 👋</h2>
+
+            <p>Please login to your account</p>
+
+            
+            <div class="textbox">
+
+                <label>User Name / Email Address</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter User Name/ Email Add"
+                    [(ngModel)] = "username"
+                    name = "username">
+
+            </div>
+
+            <div class="textbox">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    placeholder="********"
+                    [(ngModel)] = "password"
+                    name="password">
+
+            </div>
+
+            <div class="options">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a href="">Forgot Password?</a>
+
+            </div>
+
+            <button (click)='login()'>
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

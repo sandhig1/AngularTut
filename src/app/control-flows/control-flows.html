@@ -1,0 +1,129 @@
+<h4>Lesson-7 : <u>Control-Flows</u></h4><br>
+
+<h5>a) <u>if Control Flow </u></h5><br>
+
+<h6>ex 1.) <u>Div Show / Hide</u></h6>
+<div class="row">
+    <div class="col-lg-2">
+        @if(isdivShow==true){
+            <div class="bg-primary p-4">
+                Div Show / Hide
+            </div>
+        }
+    </div>
+</div>
+<div class="row p-1">
+    <div class="col-lg-3">
+        <button type="button" (click)="onDivShowHide()" title="isdivShow==false?'Show':'Hide'">{{isdivShow==false?'Show':'Hide'}}</button>
+    </div>
+</div>
+<br>
+
+<h6>ex 2.) <u>Offer Code</u></h6>
+<div class="row">
+    <div class="col-lg-2">
+        <input type="checkbox" [(ngModel)]="isOfferAvailable"> Offer Available?
+        @if(isOfferAvailable==true){
+            <input type="text" placeholder="Enter Offer Code">
+        }
+    </div>
+</div>
+<br>
+
+<h6>ex 3.) <u>Order Status</u></h6>
+<div class="row">
+    <div class="col-lg-2">
+        Status 
+        <select [(ngModel)]="SelectedStatus">
+            <option value="Generated">Order Generated</option>
+            <option value="Packed">Order Packed</option>
+            <option value="Shipped">Order Shipped</option>
+            <option value="Delivered">Order Delivered</option>            
+        </select>
+        @if(SelectedStatus=='Generated'){
+            <span>Order Generated</span>
+        }@else if(SelectedStatus=='Packed'){
+            <span>Order Packed</span>
+        }@else if(SelectedStatus=='Shipped'){
+            <span>Order Shipped</span>
+        }@else if(SelectedStatus=='Delivered'){
+            <span>Order Delivered</span>
+        }@else{
+            <span class="text-danger">Invalid Order</span>
+        }
+
+    </div>
+</div>
+<br>
+
+<h5>a) <u>for Control Flow </u></h5><br>
+
+<h6>ex 1.) <u>ul tag</u></h6>
+<div class="row">
+    <div class="col-lg-2">
+        <ul>
+        @for(item of cityList; track $index){
+            <li>{{item}}</li>
+        }
+        </ul>
+    </div>
+</div>
+
+<h6>ex 2.) <u>Dropdown / Select</u></h6>
+<div class="row">
+    <div class="col-lg-1" style="margin-top: 5px;">City</div>
+    <div class="col-lg-2">
+        <select class="form-select">
+            @for(item1 of cityList; track $index){
+                <option>{{item1}}</option>
+            }
+        </select>
+    </div>
+</div>
+<br>
+
+<h6>ex 3.) <u>Student table</u></h6>
+<div class="row">
+    <div class="col-lg-6" style="margin-top: 5px;"><u>Student List</u></div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered">
+            <thead>
+                <td style="font-weight: bold;">Student Name</td>
+                <td style="font-weight: bold;">City</td>
+                <td style="font-weight: bold;">Roll No.</td>
+            </thead>
+            <tbody>
+                @for(item of studentList; track $index){
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.city}}</td>
+                        <td>{{item.rollno}}</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<br>
+<h6>ex 4.) <u>Student Data in Card Design</u></h6>
+<div class="row">
+    <div class="col-lg-6" style="margin-top: 5px;"><u>Student List</u></div>
+</div>
+<div class="row">
+    @for(item of studentList; track $index){
+        <div class="col-lg-4 mb-1 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6>{{item.name}}</h6>
+                    <p>{{item.city}}</p>
+                    <p>{{item.rollno}}</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br><br><br><br><br><br>
+
