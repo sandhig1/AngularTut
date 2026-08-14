@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
-  selector: 'app-pipes',
+  selector: 'app-installation',
   imports: [Mypageheader],
-  templateUrl: './pipes.html',
-  styleUrl: './pipes.css',
+  templateUrl: './installation.html',
+  styleUrl: './installation.css',
 })
-export class Pipes {}
+export class Installation {
+
+}

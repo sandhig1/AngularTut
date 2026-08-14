@@ -23,6 +23,8 @@ import { StateList } from './state-list/state-list';
 import { City } from './city/city';
 import { CityList } from './city-list/city-list';
 import { roleBasedGuard } from './role-based-guard';
+import { Reusable } from './reusable/reusable';
+import { Installation } from './installation/installation';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
@@ -30,6 +32,7 @@ export const routes: Routes = [
     {path:'', component:Home, 
         children:[
             {path:'dashboard', component:Dashboard, canActivate :[roleBasedGuard]},
+            {path:'installation', component:Installation},
             {path:'variables', component:Variables},
             {path:'components', component:Components},
             {path:'bindings', component:Bindings},
@@ -44,6 +47,7 @@ export const routes: Routes = [
             {path:'signals', component:Signals},
             {path:'pipes', component:Pipes},
             {path:'crud-ops', component:CrudOps},
+            {path:'reusable-comp', component:Reusable},
 
             {path:'enquiry', component:Enquiry, canActivate :[roleBasedGuard]},
             {path:'enquiry/:id', component:Enquiry},

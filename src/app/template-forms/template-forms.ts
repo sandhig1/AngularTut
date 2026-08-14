@@ -2,10 +2,11 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
+import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-template-forms',
-  imports: [FormsModule, JsonPipe, MatTabsModule],
+  imports: [FormsModule, JsonPipe, MatTabsModule, Mypageheader],
   templateUrl: './template-forms.html',
   styleUrl: './template-forms.css',
 })

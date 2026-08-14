@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-variables',
-  imports: [],
+  imports: [Mypageheader],
   templateUrl: './variables.html',
   styleUrl: './variables.css',
 })

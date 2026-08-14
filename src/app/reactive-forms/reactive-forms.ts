@@ -3,10 +3,11 @@ import { Component, inject, NgModule } from '@angular/core';
 import { FormControl, FormGroup, NgForm, ReactiveFormsModule, FormsModule,  Validators, NgModel, FormBuilder } from '@angular/forms';
 import { form, validate } from '@angular/forms/signals';
 import { MatTabsModule } from '@angular/material/tabs';
+import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-reactive-forms',
-  imports: [ReactiveFormsModule, JsonPipe, MatTabsModule],
+  imports: [ReactiveFormsModule, JsonPipe, MatTabsModule, Mypageheader],
   templateUrl: './reactive-forms.html',
   styleUrl: './reactive-forms.css',
 })

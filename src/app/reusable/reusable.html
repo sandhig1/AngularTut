@@ -1,0 +1,40 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 12 : Reusable Components'" [HeaderText]="'In this chapter, We will learn about of Reusable Components in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is Reusable Components in Angular?<br>
+        <ul>
+            <li>Reusable components in Angular are self-contained, generic block of User Interface and code, designed to use in multiple times in different parts on an Angular Application.</li>
+            <li>Instead of using default repetitative html elements, You can design your own customized element using reusable component and can pass various configuation settings</li>
+            <li>Reusable components are also called "Dumb or Presentation Components" because it rarely manage any complex business type or fetch data directly.</li>
+            <li>Reusable components are heavily rely on its parent component to tell them what to display.</li>
+        </ul>
+    </li>
+    <li>What are different type of mechanism used to build reusable component in Angular?<br>
+        <ul>
+            <li>Angular offere primarily 3 mechanisms to make the component reusable and dynamic : <br>
+                <ul style="list-style-type: lower-alpha;">
+                    <li>Data Input (@input()):<br>
+                        <ul>
+                            <li>It allows parent component to pass data to the child component </li>
+                        </ul>
+                    </li>
+                    <li>Data Output (@output()):<br>
+                        <ul>
+                            <li>It allows child component to emit custom events upto the parent component when a user interacts with it</li>
+                        </ul>
+                    </li>
+                    <li>Content Projection (&lt;ng-content&gt;&lt;/ng-content&gt;) :<br>
+                        <ul>
+                            <li>It allows parent component to inject custom HTML or other components directly into a dedicated slot with in the reusable compopnent template.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+ 
+<h5>Examples :</h5><br>
+<h6>Example 1) Created resuable component mypageheader</h6>
+<h6>Example 2) Created resuable component mycard for showing data i &lt;ng-content&gt;&lt;/ng-content&gt;</h6>
+<h6>Example 3) Created resuable component mybutton and call saveEnquiry functio on btn click in add mode</h6>

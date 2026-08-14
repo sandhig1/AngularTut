@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { form, FormField, maxLength, minLength, required } from '@angular/forms/signals';
 import { MatTabsModule } from '@angular/material/tabs';
+import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-signal-forms',
-  imports: [MatTabsModule, FormField],
+  imports: [MatTabsModule, FormField, Mypageheader],
   templateUrl: './signal-forms.html',
   styleUrl: './signal-forms.css',
 })
