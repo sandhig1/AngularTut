@@ -7,7 +7,7 @@ import { APIUrl } from '../../constants/global.constant';
 
 @Component({
   selector: 'app-enquiry-list',
-  imports: [DatePipe, JsonPipe],
+  imports: [DatePipe],
   templateUrl: './enquiry-list.html',
   styleUrl: './enquiry-list.css',
 })

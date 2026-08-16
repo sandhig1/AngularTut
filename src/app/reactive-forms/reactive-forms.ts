@@ -7,7 +7,7 @@ import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-reactive-forms',
-  imports: [ReactiveFormsModule, JsonPipe, MatTabsModule, Mypageheader],
+  imports: [ReactiveFormsModule, MatTabsModule, Mypageheader],
   templateUrl: './reactive-forms.html',
   styleUrl: './reactive-forms.css',
 })

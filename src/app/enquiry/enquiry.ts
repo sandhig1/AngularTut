@@ -8,7 +8,7 @@ import { APIUrl } from '../../constants/global.constant';
 
 @Component({
   selector: 'app-enquiry',
-  imports: [FormsModule, JsonPipe],
+  imports: [FormsModule],
   templateUrl: './enquiry.html',
   styleUrl: './enquiry.css',
 })

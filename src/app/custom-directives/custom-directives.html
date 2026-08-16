@@ -1,0 +1,63 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 13 : Custom Directives'" [HeaderText]="'In this chapter, We will learn about of Custom Directives in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is Custom Directives in Angular?<br>
+        <ul>
+            <li>Customer Directives in Angular allow you to extend the capabilities of HTML by creating a reusable behavious, styling or structure logic, <br>that can be directly applied to the DOM elements.</li>
+        </ul>
+    </li>
+    <li>What are different type of custom directives in Angular?<br>
+        <ul>
+            <li>Angular offer primarily 2 custom directives :
+                <ul style="list-style-type: lower-alpha;">
+                    <li>Attribute Directive:<br>
+                        <ul>
+                            <li>It changes the appreance or behaviou of an element. </li>
+                        </ul>
+                    </li>
+                    <li>Structural Directives:<br>
+                        <ul>
+                            <li>It modify the DOM by adding or removing elements</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+ 
+<h5>Examples :</h5>
+<h6>Example 1) Creating Custom Attribute <b>Highlight</b> for Changing the Highlight of element on moveenter and mouseleave.</h6>
+<div class="card border-2">
+    <div class="row">
+        <div class="col-3">
+            <h6  appHighlight [textColor] ="'orange'" >This is Header 1</h6>
+        </div>
+        <div class="col-3">
+            <h6  appHighlight [textColor] ="'red'" >This is Header 4</h6>
+        </div>
+        <div class="col-3">
+            <h6  appHighlight [textColor] ="'blue'" >This is Header 3</h6>
+        </div>
+    </div>
+</div>
+<h6>Example 2) Created Custom Attribute <b>Copy</b> & <b>Paste</b> for Copy and paste value of an element.</h6>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)] = "copyText" (change)="copyPasteTextChanged()">
+        
+    </div>
+    <div class="col-3">
+        @if(!isCopy){ 
+            <span appCopy title="Click Here to copy text" (click)="copyPasteText()" >{{copyText}}</span> 
+        }
+    </div>
+
+    <div class="col-3" >
+        @if(isCopy){ 
+            <span appPastedirective>Click Here to Paste Text</span> 
+        }
+    </div>
+</div>
+<h6>Example 3) Created Custom Attribute <b>NumberOnly</b> for allowing only numbers in a text input</h6>
+Only Numbers are allowed : <input type="text" appNumberonly >

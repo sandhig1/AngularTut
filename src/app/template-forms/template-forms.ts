@@ -6,7 +6,7 @@ import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
   selector: 'app-template-forms',
-  imports: [FormsModule, JsonPipe, MatTabsModule, Mypageheader],
+  imports: [FormsModule, MatTabsModule, Mypageheader],
   templateUrl: './template-forms.html',
   styleUrl: './template-forms.css',
 })

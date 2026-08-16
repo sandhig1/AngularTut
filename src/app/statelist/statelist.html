@@ -1,0 +1,147 @@
+<div class="container-fluid py-4">
+    <!-- Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h3 class="fw-bold">State List - with MyCard Reusable Component</h3>
+            <small class="text-muted">Dashboard / State / List  </small>
+        </div>
+
+        <button class="btn btn-primary" (click) = "openStateCreate()">
+            <i class="bi bi-plus-circle"></i>
+            New State
+        </button>
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-lg-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search..."
+                    >
+                </div>
+
+                <div class="col-lg-1 d-grid">
+                    <button class="btn btn-primary">
+                        Search  
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="card shadow-sm border-0">
+
+        <app-mycard [HeaderText]="'State List From Card'" [HeaderBGColor]="'orange'">
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead class="table-light">
+
+                        <tr style="font-size: 13px;">
+
+                            <th>#</th>
+
+                            <th>State Code</th>
+
+                            <th>State Name</th>
+
+                            <th width="170">Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                        @for(item of StateList(); track $index){
+                        <tr style="font-size: 12px;">
+
+                            <td [width]="60">{{$index+1}}</td>
+
+                            <td [width]="100">{{item.StateCode}}</td>
+
+                            <td [width]="120">{{item.StateName}}</td>
+
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" style="font-size: 10px;margin-right: 5px;">
+                                View
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-success" (click)="editState(item.StateId)" style="font-size: 10px;margin-right: 5px">
+                                    Edit
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-secondary" style="font-size: 10px;margin-right: 5px">
+                                    Print
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger" (click)="deleteState(item.StateId)" style="font-size: 10px;margin-right: 5px">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        }
+                        
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="card-footer bg-white">
+
+                <nav>
+
+                    <ul class="pagination justify-content-end mb-0">
+
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+
+                        <li class="page-item active">
+                            <a class="page-link">1</a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link">2</a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link">3</a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link">Next</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+        </app-mycard>
+        
+
+    </div>
+
+</div>

@@ -1,1 +1,74 @@
-<p>state works!</p>
+<div class="container py-4">
+
+    <div class="col-lg-6">
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="text-left">
+                <h3 class="fw-bold mb-1">{{stateObj().StateId==0?'Create': 'Edit'}} State</h3>
+                <small class="text-muted">State / {{stateObj().StateId==0?'Create': 'Edit'}}</small>
+            </div>
+
+            <div class="text-right">
+                <button class="btn btn-primary" style="margin-right: 10px;" (click) = "createState()">
+                    Create
+                </button>
+
+                <button class="btn btn-primary" (click) = "goToStateList()">
+                    state List
+                </button>
+            </div>
+
+        </div>
+
+        <form #form="ngForm">
+
+            <!-- Customer Information -->
+            <div class="card shadow-sm border-1 mb-4 p-4">
+                <div class="state-card">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-8">
+                            <label class="form-label">State Name</label>
+                            <input type="text" name ="statecode" class="form-control" 
+                                [(ngModel)] ="stateObj().StateCode" placeholder="Enter State Code" 
+                                [maxLength]="10">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">State Name</label>
+                            <input type="text" name ="statename" class="form-control" 
+                                [(ngModel)] ="stateObj().StateName" laceholder="Enter State Name"
+                                [maxLength]="50">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <button class="btn btn-success me-2" (click) = "saveState()" style="width: 100%;">
+                        {{stateObj().StateId==0? 'Save' : 'Update'}}
+                    </button>
+                </div>
+
+                <div class="col-lg-6">
+                    <app-mybutton [btnText]="(stateObj().StateId==0? 'Save' : 'Update') + ' Using @Output() of MyButton reusable component'" 
+                    [btnClass]="'btn btn-primary me-2'" (onBtnClick)="saveState()"
+                    ></app-mybutton>
+                </div>
+
+                <div class="col-lg-3">
+                    <button class="btn btn-warning" style="width: 100%;">
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -19,12 +19,13 @@ import { CrudOps } from './crud-ops/crud-ops';
 import { SignalForms } from './signal-forms/signal-forms';
 import { Dashboard } from './dashboard/dashboard';
 import { State } from './state/state';
-import { StateList } from './state-list/state-list';
+import { Statelist } from './statelist/statelist';
 import { City } from './city/city';
 import { CityList } from './city-list/city-list';
 import { roleBasedGuard } from './role-based-guard';
 import { Reusable } from './reusable/reusable';
 import { Installation } from './installation/installation';
+import { CustomDirectives } from './custom-directives/custom-directives';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
@@ -48,6 +49,7 @@ export const routes: Routes = [
             {path:'pipes', component:Pipes},
             {path:'crud-ops', component:CrudOps},
             {path:'reusable-comp', component:Reusable},
+            {path:'custom-directives', component:CustomDirectives},
 
             {path:'enquiry', component:Enquiry, canActivate :[roleBasedGuard]},
             {path:'enquiry/:id', component:Enquiry},
@@ -55,7 +57,7 @@ export const routes: Routes = [
 
             {path:'state', component:State},
             {path:'state/:id', component:State},
-            {path:'statelist', component:StateList},
+            {path:'statelist', component:Statelist},
 
             {path:'city', component:City},
             {path:'city/:id', component:City},
