@@ -61,7 +61,7 @@ export class Login {
           localStorage.setItem("UserName", "Mukesh");
           localStorage.setItem("UserRole", "e");
 
-          this.router1.navigate(['/enquirylist']);
+          this.router1.navigate(['/lessonhome']);
         }
         else{
           alert("Invalid Credentials"); 

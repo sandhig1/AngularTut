@@ -26,12 +26,14 @@ import { roleBasedGuard } from './role-based-guard';
 import { Reusable } from './reusable/reusable';
 import { Installation } from './installation/installation';
 import { CustomDirectives } from './custom-directives/custom-directives';
+import { Lessonhome } from './lessonhome/lessonhome';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
     {path:'login', component:Login},
     {path:'', component:Home, 
         children:[
+            {path:'lessonhome', component:Lessonhome},
             {path:'dashboard', component:Dashboard, canActivate :[roleBasedGuard]},
             {path:'installation', component:Installation},
             {path:'variables', component:Variables},

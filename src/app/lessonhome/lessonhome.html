@@ -1,0 +1,16 @@
+<app-mypageheader [HeaderTitle]="'Angular 22 Lessons'" [HeaderText]="'This section will show various lessons we are going to learn under Angular 22'" >
+</app-mypageheader>
+<div class="row">
+    
+    @for(item of lessons; track $index){
+        <div class = "card col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
+            <div class ="card card-header {{item.Status=='Done'? 'bg-success' : item.Status=='Partial'? 'bg-primary': item.Status=='Progress'? 'bg-warning' : 'bg-danger'}}" style="color:white;font-weight: bold;">
+                <a routerLink="/{{item.ComponentPath}}" style="color: white;">{{item.lessonTitle}} {{item.Status=="Progress"?"(In progress)" : ""}}</a>
+            </div>
+            <div class ="card card-body">
+                {{item.lessonDesc}}
+            </div>
+        </div>
+    }
+</div>
+

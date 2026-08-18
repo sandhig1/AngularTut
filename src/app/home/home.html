@@ -14,6 +14,14 @@
             <!-- Left Menu -->
             <ul class="navbar-nav me-auto">
 
+                <li class="nav-item">
+                    <a class="nav-link"
+                    routerLink="/lessonhome"
+                    routerLinkActive="active">
+                        Home
+                    </a>
+                </li>
+
                 @for (item of filteredMenus; track $index) {
                 <li class="nav-item">
                     <a class="nav-link"
