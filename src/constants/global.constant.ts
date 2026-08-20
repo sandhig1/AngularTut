@@ -1,5 +1,5 @@
-export const APIUrl:string = "http://angulartutapi.esoltechserv.com/api/";
-//export const APIUrl:string = "http://localhost:12472/api/";
+//export const APIUrl:string = "http://angulartutapi.esoltechserv.com/api/";
+export const APIUrl:string = "http://localhost:12472/api/";
 
 export const globalMenus = {
 

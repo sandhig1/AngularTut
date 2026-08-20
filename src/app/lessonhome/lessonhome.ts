@@ -24,7 +24,7 @@ export class Lessonhome {
     { lessonTitle : "12. Pipes", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "pipes", Status: "Pending"},
     { lessonTitle : "13. CRUD Operations", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "crud-ops", Status: "Done"},
     { lessonTitle : "14. Reusable Components", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "reusable-comp" , Status: "Done"},
-    { lessonTitle : "15. Complex Directives", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "complex-directives", Status: "Done"},
+    { lessonTitle : "15. Custom Directives", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "custom-directives", Status: "Done"},
     { lessonTitle : "16. Services", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "services", Status: "Partial"},
     { lessonTitle : "17. Facade", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "facade", Status: "Pending"},
     { lessonTitle : "18. Role Based Menus", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "role-based-menus" , Status: "Partial"},
@@ -33,6 +33,7 @@ export class Lessonhome {
     { lessonTitle : "21. Interceptor", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "interceptor" , Status: "Progress"},
     { lessonTitle : "22. ViewChild", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "viewchild", Status: "Pending"},
     { lessonTitle : "23. Subject & Behavior Subject", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "signal-behaviorsignal" , Status: "Pending"},
-    { lessonTitle : "24. rxjs", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "rxjs" , Status: "Pending"},
+    { lessonTitle : "24. <ng-template> & <ng-container>", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "signal-behaviorsignal" , Status: "Partial"},
+    { lessonTitle : "25. rxjs", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "rxjs" , Status: "Pending"},
   ]
 }

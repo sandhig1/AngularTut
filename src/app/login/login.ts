@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs';
+import { Authservice } from '../../services/authservice/authservice';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { debounceTime } from 'rxjs';
 export class Login {
   protected readonly title = signal('Angular-Tutorial');
   
+  authServ = inject(Authservice);
+
   username:string ="";
   password:string ="";
 
@@ -22,6 +25,8 @@ export class Login {
 
   login(){
     debugger;
+
+    var loginRequest = { UserName: this.username.trim(), Password: this.password.trim(), UserType:"admin" };
 
     if (this.username.trim() == ""){
       alert("Please Enter User Name")
@@ -43,8 +48,19 @@ export class Login {
           alert("Invalid Credentials"); 
         }
       }
-      else if (this.username.trim() == "admin"){
-        if (this.password.trim() == "admin"){
+      else if (this.username.trim() == "admin"){        
+        
+        this.authServ.login(loginRequest).subscribe({
+          next:(res:any)=>{
+            this.loggedInFlag = true;
+            localStorage.setItem("UserName", "Admin");
+            localStorage.setItem("UserRole", "a");
+
+            this.router1.navigate(['/enquirylist']);  
+          }
+        });
+
+        /*if (this.password.trim() == "admin"){
           this.loggedInFlag = true;
           localStorage.setItem("UserName", "Admin");
           localStorage.setItem("UserRole", "a");
@@ -52,20 +68,34 @@ export class Login {
           this.router1.navigate(['/dashboard']);
         }
         else{
-          alert("Invalid Credentials"); 
-        }
+          alert("Invalid Credentials");
+        }*/
       }
-      else if (this.username.trim() == "mukesh123"){
-        if (this.password.trim() == "admin"){
+      else if (this.username.trim() == "sandhi"){
+        /*if (this.password.trim() == "admin"){
           this.loggedInFlag = true;
-          localStorage.setItem("UserName", "Mukesh");
+          localStorage.setItem("UserName", "sandhi");
           localStorage.setItem("UserRole", "e");
 
           this.router1.navigate(['/lessonhome']);
         }
         else{
           alert("Invalid Credentials"); 
-        }
+        }*/
+       this.authServ.login(loginRequest).subscribe({
+          next:(res:any)=>{
+            if (res.status){
+            this.loggedInFlag = true;
+            localStorage.setItem("UserName", "Sandhi");
+            localStorage.setItem("UserRole", "a");
+
+            this.router1.navigate(['/enquirylist']);  
+            }
+            else{
+              alert(res.msg);
+            }
+          }
+        });
       }
       else{
         alert("Invalid Credentials");
