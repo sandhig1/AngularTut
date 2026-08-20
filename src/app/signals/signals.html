@@ -69,4 +69,17 @@
         </li>
     </ul>
 </h6>
-<h6>Example 3) </h6>
+<h6>Example 3) Using effect() for tracking value change of signal variable
+    <ul>
+        <li>User Name Changed = {{userNameChanged}}<br>
+            User Name Signal variable = {{userName()}}<br>
+            <input type="text" class="mr-4" [(ngModel)]="userNameVal" placeholder="Enter User Name" name="userName" id="userName" style="width:150px"
+            (keyup)="userNameKeyPress($event)"/> 
+            <button class="btn btn-danger text-white ms-2" (click)="changeUserName()" >Change User Name</button>
+
+        </li>
+    </ul>
+</h6>
+<br>
+<br>
+<br>
