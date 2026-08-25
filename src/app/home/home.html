@@ -22,15 +22,31 @@
                     </a>
                 </li>
 
-                @for (item of filteredMenus; track $index) {
-                <li class="nav-item">
-                    <a class="nav-link"
-                    routerLink="/{{item.routeName}}"
-                    routerLinkActive="active">
-                        {{item.label}}
-                    </a>
-                </li>
+                @for (item of filteredMenus.filter((menu) => menu.mainMenu === ""); track $index) {
+                    <li class="nav-item">
+                        <a class="nav-link"
+                        routerLink="/{{item.routeName}}"
+                        routerLinkActive="active">
+                            {{item.label}}
+                        </a>
+                    </li>
                 }
+
+                @for (item of filteredMainMenus; track $index) {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            {{item.menuName}}
+                        </a>
+                        <ul class="dropdown-menu">    
+                            @for (item1 of filteredMenus.filter((menu) => menu.mainMenu === item.menuName); track item1.label) {
+                                <li>
+                                    <a class="dropdown-item" routerLink="/{{item1.routeName}}">{{item1.label}}</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+
 
                 <!-- Lessons Dropdown -->
                 <li class="nav-item dropdown">
@@ -62,18 +78,6 @@
                         <li><a class="dropdown-item" routerLink="/custom-directives">13. Custom Directives</a></li>
                     </ul>
                 </li>
-
-                <!-- Masters Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                        Masters
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="/statelist">1. State</a></li>
-                        <li><a class="dropdown-item" routerLink="/citylist">2. City</a></li>
-                    </ul>
-                </li>
-
             </ul>
 
             <!-- Right Side -->

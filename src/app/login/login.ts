@@ -56,7 +56,7 @@ export class Login {
             localStorage.setItem("UserName", "Admin");
             localStorage.setItem("UserRole", "a");
 
-            this.router1.navigate(['/enquirylist']);  
+            this.router1.navigate(['/lessonhome']);  
           }
         });
 
@@ -85,11 +85,11 @@ export class Login {
        this.authServ.login(loginRequest).subscribe({
           next:(res:any)=>{
             if (res.status){
-            this.loggedInFlag = true;
-            localStorage.setItem("UserName", "Sandhi");
-            localStorage.setItem("UserRole", "a");
+              this.loggedInFlag = true;
+              localStorage.setItem("UserName", "Sandhi");
+              localStorage.setItem("UserRole", "a");
 
-            this.router1.navigate(['/enquirylist']);  
+              this.router1.navigate(['/lessonhome']);  
             }
             else{
               alert(res.msg);

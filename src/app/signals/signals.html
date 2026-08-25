@@ -71,11 +71,20 @@
 </h6>
 <h6>Example 3) Using effect() for tracking value change of signal variable
     <ul>
-        <li>User Name Changed = {{userNameChanged}}<br>
+        <li>User Name Changed = {{userNameChanged==true?"via effect()": "via KeyUp() Event"}}<br>
             User Name Signal variable = {{userName()}}<br>
             <input type="text" class="mr-4" [(ngModel)]="userNameVal" placeholder="Enter User Name" name="userName" id="userName" style="width:150px"
             (keyup)="userNameKeyPress($event)"/> 
             <button class="btn btn-danger text-white ms-2" (click)="changeUserName()" >Change User Name</button>
+
+        </li>
+    </ul>
+</h6>
+<h6>Example 4) Using Computed signal variable for calculating Amount 
+    <ul>
+        <li>Enter Price : <input type="text" class="mr-4" [(ngModel)]="price" placeholder="Enter Price" name="price" id="price" style="width:80px"/> <br>
+            Enter Quantity : <input type="text" class="mr-4" [(ngModel)]="qty" placeholder="Enter Quantity" name="qty" id="qty" style="width:80px"/> <br>
+            Total Computed Signal Amount = <span style="font-size:25px"><b>{{totAmt()}}</b></span><br>
 
         </li>
     </ul>

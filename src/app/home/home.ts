@@ -14,6 +14,7 @@ export class Home {
   userName = localStorage.getItem("UserName");
   userRole = localStorage.getItem("UserRole");
 
+  filteredMainMenus = globalMenus.mainMenu.filter((m:any)=>m.allowRoles.includes(this.userRole));
   filteredMenus = globalMenus.menuItems.filter((m:any)=>m.allowRoles.includes(this.userRole));
 
   logout(){

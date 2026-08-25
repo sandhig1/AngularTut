@@ -3,41 +3,35 @@ export const APIUrl:string = "http://localhost:12472/api/";
 
 export const globalMenus = {
 
+    mainMenu : [
+        {menuName :"Transactions", allowRoles : ['sa', 'a']},
+        {menuName :"Masters", allowRoles : ['sa', 'a']},
+    ],
+
     menuItems : [
         {
             label : "Dashboard",
+            mainMenu : "",
             routeName : "dashboard",
             allowRoles : ['sa', 'a']
         },
         {
-            label : "Enquiry List",
+            label : "Enquiry",
+            mainMenu : "Transactions",
             routeName : "enquirylist",
             allowRoles : ['sa', 'a', 'e']
         },
         {
-            label : "Create Enquiry",
-            routeName : "enquiry",
-            allowRoles : ['a', 'e']
-        },
-        {
-            label : "StateList",
+            label : "State",
+            mainMenu : "Masters",
             routeName : "statelist",
             allowRoles : ['sa', 'a']
         }, 
         {
-            label : "State",
-            routeName : "state",
-            allowRoles : ['a']
-        },
-        {
-            label : "CityList",
+            label : "City",
+            mainMenu : "Masters",
             routeName : "citylist",
             allowRoles : ['sa', 'a']
-        }, 
-        {
-            label : "City",
-            routeName : "city",
-            allowRoles : ['a']
         }
     ]
 }
