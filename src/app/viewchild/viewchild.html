@@ -1,0 +1,55 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 22 : ViewChild'" [HeaderText]="'In this chapter, We will learn about of ViewChild in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is ViewChild in Angular?<br>
+        <ul>
+            <li>ViewChild in Angular is a query mechanism used to get a reference to an element, directive, or a child component instance inside a components's own HTML Template.</li>
+            <li>Its like angular's native, safe alternative to JavaScript's native document.getElementByRefId or queryselector.</li>
+            <li>It gives you direct way to programmatically access and manupulate elements.</li>
+        </ul>
+    </li>
+    <li>Why do we use ViewChild?<br>
+        <ul style="list-style-type: lower-alpha;">
+            <li>Access Child Component:<br>
+                <ul>
+                    <li>It call public method or read property of component directly.</li>
+                </ul>
+            </li>
+            <li>Reference DOM Element:<br>
+                <ul>
+                    <li>It Target/Reference HTML Elements directly to apply focus, trigger scrolling, or measure dimensions.</li>
+                </ul>
+            </li>
+            <li>Interact with Directives:<br>
+                <ul>
+                    <li>To read vialue or run logic from custom directives applied with in the template.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>What are Different ways of implement ViewChild?<br>
+        <ul>
+            <li>Angular offere primarily 2 ways of implementing ViewChild : <br>
+                <ul style="list-style-type: lower-alpha;">
+                    <li>Traditional Decorator Approach:<br>
+                        <ul>
+                            <li>By using @ViewChild property decorator.</li>
+                        </ul>
+                    </li>
+                    <li>Modern Signal Approach:<br>
+                        <ul>
+                            <li>In recent viewson of angular, Signal based view queries provided reactive, Type Safe Queries without life-cycle hook coplexities.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+ 
+<h5>Examples :</h5><br>
+<h6>Example 1) Created resuable component mypageheader (Check my custom page header in various page)</h6>
+<h6>Example 2) Created resuable component mycard for showing data i &lt;ng-content&gt;&lt;/ng-content&gt; (Check state list) </h6>
+<h6>Example 3) Created resuable component mybutton and call saveState function on btn click in State</h6>

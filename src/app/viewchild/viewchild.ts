@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { Mypageheader } from '../../reusable-comp/mypageheader/mypageheader';
 
 @Component({
-  selector: 'app-interceptor',
+  selector: 'app-viewchild',
   imports: [Mypageheader],
-  templateUrl: './interceptor.html',
-  styleUrl: './interceptor.css',
+  templateUrl: './viewchild.html',
+  styleUrl: './viewchild.css',
 })
-export class Interceptor {
-  
-}
+export class Viewchild {}
