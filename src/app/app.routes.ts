@@ -27,6 +27,7 @@ import { Reusable } from './reusable/reusable';
 import { Installation } from './installation/installation';
 import { CustomDirectives } from './custom-directives/custom-directives';
 import { Lessonhome } from './lessonhome/lessonhome';
+import { Interceptor } from './interceptor/interceptor';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
@@ -52,6 +53,7 @@ export const routes: Routes = [
             {path:'crud-ops', component:CrudOps},
             {path:'reusable-comp', component:Reusable},
             {path:'custom-directives', component:CustomDirectives},
+            {path:'interceptor', component:Interceptor},
 
             {path:'enquiry', component:Enquiry, canActivate :[roleBasedGuard]},
             {path:'enquiry/:id', component:Enquiry},

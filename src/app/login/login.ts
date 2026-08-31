@@ -26,7 +26,7 @@ export class Login {
   login(){
     debugger;
 
-    var loginRequest = { UserName: this.username.trim(), Password: this.password.trim(), UserType:"admin" };
+    var loginRequest = { UserName: this.username.trim(), Password: this.password.trim(), UserType:"a" };
 
     if (this.username.trim() == ""){
       alert("Please Enter User Name")
@@ -86,8 +86,7 @@ export class Login {
           next:(res:any)=>{
             if (res.status){
               this.loggedInFlag = true;
-              localStorage.setItem("UserName", "Sandhi");
-              localStorage.setItem("UserRole", "a");
+              
 
               this.router1.navigate(['/lessonhome']);  
             }

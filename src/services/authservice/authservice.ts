@@ -17,7 +17,9 @@ interface LoginResponse{
 }
 
 interface RefreshTokenResponse{
-    refreshToken :"";
+    status : false,
+    msg : "",
+    token: ""
 }
 
 @Injectable({
@@ -34,9 +36,16 @@ export class Authservice {
     
     login(credential : {UserName: String; Password: String; UserType: String}): Observable<LoginResponse> {
         debugger;
+        localStorage.setItem("UserName", "");
+        localStorage.setItem("UserRole", "");
+        localStorage.setItem(this.access_token, "");
+
         return this.http.post<LoginResponse>(`${APIUrl}/login/login`, credential).pipe(
             tap((res) => {
                 if (res.status){
+                    localStorage.setItem("UserName", credential.UserName.toString());
+                    localStorage.setItem("UserRole", credential.UserType.toString());
+                    
                     this.saveToken(res.token);
                 }
             })
@@ -47,20 +56,20 @@ export class Authservice {
         localStorage.setItem(this.access_token, accessToken);
     }
 
-    refreshToken(): Observable<RefreshTokenResponse> {
+    refreshToken(credential : {UserName: String; UserType: String}): Observable<RefreshTokenResponse> {
         // If your backend relies on HttpOnly cookies, send `withCredentials: true`
         // If it relies on a payload request, retrieve it: const refreshToken = localStorage.getItem('refresh_token');
-    
-        return this.http.post<RefreshTokenResponse>(`${APIUrl}/refresh`, {}, { withCredentials: true }).pipe(
+        //alert("RefreshToken function of authservice callled");
+        return this.http.post<RefreshTokenResponse>(`${APIUrl}/Auth/RefreshToken`, credential).pipe(
             tap((response) => {
-                this.updateAccessToken(response.refreshToken);
+                //alert('new generated token : ' + response.token);
+                this.updateAccessToken(response.token);
 
-                if (response.refreshToken) {
-                    localStorage.setItem('refresh_token', response.refreshToken);
-                }
-            }),
-            catchError((error) => {
-                this.logout();
+                if (response.token) {
+                    localStorage.setItem('refresh_token', response.token);
+                }  
+                
+                return response;
             })
         );
     }
