@@ -1,0 +1,71 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 24 : &lt;ng-Container&gt; & &lt;ng-Template&gt;'" [HeaderText]="'In this chapter, We will learn about of ng-Container and ng-Template in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is &lt;ng-Container&gt; & &lt;ng-Template&gt; in Angular?<br>
+        <ul>
+            <li>&lt;ng-Container&gt; & &lt;ng-Template&gt; in Angular are specialized elements used to manage template logic and structure without adding unnecessary element.</li>
+            <li>&lt;ng-Container&gt; evaluate and render its content immediately while <br> 
+                &lt;ng-Template&gt; define a lazy-loaded block of HTML which remains hidden unless explicitly rendered by any control flow or directly</li>
+        </ul>
+    </li>
+    <li>Explain &lt;ng-Container&gt;?<br>
+        <ul>
+            <li>&lt;ng-Container&gt; is an structural placeholder</li>
+            <li>You should use it when you need a wrapper to attach logic logic but you do not want to pollute the layout with an extra wrapper element like div that will be visible in DOM</li>
+        </ul>
+    </li>
+
+    <li>Explain &lt;ng-Template&gt;<br>
+        <ul>
+            <li>&lt;ng-Template&gt; is a reusable blueprint</li>
+            <li>Angular complier process the content inside &lt;ng-template&gt; but doesnot show anything in the screen untill you explicitly tell angular to draw it.</li>
+        </ul>
+    </li>
+
+</ul>
+ 
+<h5>Examples :</h5><br>
+
+<h5>Examples &lt;ng-container&gt; :</h5><br>
+<h6>Example 1a) Showing List of active Students using *ngfor & *ngif </h6>
+    <ng-container *ngFor="let student of studentList">
+        <div *ngIf="student.Active==true" class = "col-md-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{student.StudentName}}</h5>
+                    <p class="card-text">Student Code : {{student.StudentCode}}</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+<h6>Example 1b) Showing List of active Students using &#64;for & &#64;if </h6>
+<div class = "row mb-4">
+    @for (student of studentList; track $index) {
+        <ng-container>
+            @if (student.Active){
+            <div class = "col-md-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{student.StudentName}}</h5>
+                        <p class="card-text">Student Code : {{student.StudentCode}}</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </ng-container>
+    }
+</div>
+
+<h5>Examples &lt;ng-template&gt; :</h5><br>
+<h6>Example 2) Showing active and inactive student </h6>
+<div class = "row mb-4">
+    <ul *ngFor="let student of studentList">
+        <li *ngIf="student.Active==true else myStudentTemplate" >
+            {{student.StudentName}} is Active
+        </li>
+    </ul>
+
+    <ng-template #myStudentTemplate>
+        <span class="bg bg-danger text-white p-2">Student Inactive</span>
+    </ng-template>
+</div>

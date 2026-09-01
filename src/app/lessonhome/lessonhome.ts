@@ -31,9 +31,9 @@ export class Lessonhome {
     { lessonTitle : "19. Route Guard", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "route-guard", Status: "Pending"},
     { lessonTitle : "20. JWT Token", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "jwt-token", Status: "Pending"},
     { lessonTitle : "21. Interceptor", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "interceptor" , Status: "Done"},
-    { lessonTitle : "22. ViewChild", lessonDesc : "ViewChild of angular 22"   ,ComponentPath : "viewchild", Status: "Progress"},
+    { lessonTitle : "22. ViewChild", lessonDesc : "ViewChild of angular 22"   ,ComponentPath : "viewchild", Status: "Done"},
     { lessonTitle : "23. Subject & Behavior Subject", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "signal-behaviorsignal" , Status: "Pending"},
-    { lessonTitle : "24. <ng-template> & <ng-container>", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "signal-behaviorsignal" , Status: "Pending"},
+    { lessonTitle : "24. <ng-container> & <ng-template>", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "ng-container-template" , Status: "Progress"},
     { lessonTitle : "25. rxjs", lessonDesc : "Installation and Configuration of angular 22", ComponentPath : "rxjs" , Status: "Pending"},
   ]
 }

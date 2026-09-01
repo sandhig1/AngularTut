@@ -47,9 +47,42 @@
         </ul>
     </li>
 
+    <li>Note : While accessing Component you should directly refer to the Component Tag and initialize the component class in ngAfterViewInit event<br></li>
+
 </ul>
  
 <h5>Examples :</h5><br>
-<h6>Example 1) Created resuable component mypageheader (Check my custom page header in various page)</h6>
-<h6>Example 2) Created resuable component mycard for showing data i &lt;ng-content&gt;&lt;/ng-content&gt; (Check state list) </h6>
-<h6>Example 3) Created resuable component mybutton and call saveState function on btn click in State</h6>
+
+<h5>Examples Using Classic @ViewChild:</h5><br>
+<h6>Example 1) Reading Text view using @ViewChild</h6>
+<div class = "row mb-4">
+    <div class = "col-md-3">
+        <input type="text" class="form-control" #myInputText placeholder="Enter Text" />
+    </div> 
+    <div class = "col-md-4">
+        <button class="btn btn-primary" (click)="readText()">Read Text</button>
+    </div>
+</div>
+
+
+<h6>Example 2) Changing the color of a div using @ViewChild </h6>
+<div #myDiv style="width: 100px; height: 100px; margin-bottom: 10px; background-color: lightgray;"></div>
+<div class = "row mb-4">
+    <div class = "col-md-2">
+        <button class="btn btn-danger" (click)="changeColor('red')">Make Div Red</button>
+    </div> 
+    <div class = "col-md-2">
+        <button class="btn btn-primary" (click)="changeColor('blue')">Make Div Blue</button>
+    </div>
+</div>
+
+<h5>Examples Using Modern Signal Approach:</h5><br>
+<h6>Example 1) Reading Text view using Modern Signal</h6>
+<div class = "row mb-4">
+    <div class = "col-md-3">
+        <input type="text" class="form-control" #mySignalInputText placeholder="Enter Text" />
+    </div> 
+    <div class = "col-md-4">
+        <button class="btn btn-primary" (click)="readTextSignal()">Read Text</button>
+    </div>
+</div>
