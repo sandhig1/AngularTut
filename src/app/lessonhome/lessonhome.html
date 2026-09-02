@@ -7,8 +7,8 @@
             <div class ="card card-header {{item.Status=='Done'? 'bg-success' : item.Status=='Partial'? 'bg-primary': item.Status=='Progress'? 'bg-warning' : 'bg-danger'}}" style="color:white;font-weight: bold;">
                 <a routerLink="/{{item.ComponentPath}}" style="color: white;">{{item.lessonTitle}} {{item.Status=="Progress"?"(In progress)" : ""}}</a>
             </div>
-            <div class ="card card-body">
-                {{item.lessonDesc}}
+            <div class ="card card-body" style="white-space: pre-line;" [innerHTML]="item.lessonDesc">
+                
             </div>
         </div>
     }

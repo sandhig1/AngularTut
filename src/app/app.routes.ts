@@ -30,6 +30,7 @@ import { Lessonhome } from './lessonhome/lessonhome';
 import { Interceptor } from './interceptor/interceptor';
 import { Viewchild } from './viewchild/viewchild';
 import { NgContainerTemplate } from './ng-container-template/ng-container-template';
+import { Subjectbehaviorsubject } from './subjectbehaviorsubject/subjectbehaviorsubject';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
@@ -57,6 +58,7 @@ export const routes: Routes = [
             {path:'custom-directives', component:CustomDirectives},
             {path:'interceptor', component:Interceptor},
             {path:'viewchild', component:Viewchild},
+            {path:'subject-behaviorsubject', component:Subjectbehaviorsubject},
             {path:'ng-container-template', component:NgContainerTemplate},
 
             {path:'enquiry', component:Enquiry, canActivate :[roleBasedGuard]},

@@ -1,0 +1,56 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 23 : Subject & Behavior Subject'" [HeaderText]="'In this chapter, We will learn about of Subject & Behavior Subject in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>In Angular, What are Subject and BehaviorSubject?<br>
+        <ul>
+            <li>Subject and BehaviorSubject are special types of observables of RXJS Library, <br>
+                used to share data and manage state across different parts on application.</li>
+            <li>Unlike standard observable, which are <b>unicast</b> (each subscribers get a fresh, iolated execution), <br>
+                Subject and BehaviorSubjects are <b>multicast</b>, this mean they broadcast the same data stream to multiple subscribers simultaneously.</li>
+            <li>They can act both as an <b>Observable</b> (you can subscribe to them) and <b>Observer</b> (You can manually feed values into them using .next()).</li>
+        </ul>
+    </li>
+    <li>Difference between Subject and BehaviorSubject?<br>
+        <ul>
+            <li> Difference between Subject and BehaviorSubject are : <br>
+                <ul style="list-style: decimal;">
+                    <li>Initial Value<br>
+                        <ul>
+                            <li>Initial value is not required while declaring <b>Subject</b><br>
+                                Initial value is strictly required while decaring <b>BehaviorSubject</b>.</li>
+                        </ul>
+                    </li>
+                    <li>On Subscription<br>
+                        <ul>
+                            <li>Subscriber of <b>Subject</b> <i> receives nothing untli a new value is entitled</i><br>
+                                Subscriber of <b>BehaviorSubject</b> <i> immediatly receives the last emitted value (or the initial value)</i>.</li>
+                        </ul>
+                    </li>
+                    <li>Memory<br>
+                        <ul>
+                            <li><b>Subject</b> <i> does not store or remember past value</i><br>
+                                <b>BehaviorSubject</b> <i> stores the lates value in memory.</i></li>
+                        </ul>
+                    </li>
+                    <li>Synchronous Access<br>
+                        <ul>
+                            <li>You can not check the value of <b>Subject</b> without subscribing<br>
+                                You can fetch the value of <b>BehaviorSubject</b> instantly using <b>.getValue()</b> or <b>.value</b>.</li>
+                        </ul>
+                    </li>
+                    <li>Primary Use Case<br>
+                        <ul>
+                            <li><b>Signal</b> should be used where your dont want to store the history or current value<br>
+                                while <b>BehaviorSignal</b> should be used where you want to store the history or current value.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+ 
+<h5>Examples :</h5><br>
+
+<h5>Examples Using Classic @ViewChild:</h5><br>
+<h6>Example 1) Reading Text view using @ViewChild</h6>
