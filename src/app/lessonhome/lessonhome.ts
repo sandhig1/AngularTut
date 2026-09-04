@@ -25,15 +25,16 @@ export class Lessonhome {
     { lessonTitle : "13. CRUD Operations", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "crud-ops", Status: "Pending"},
     { lessonTitle : "14. Reusable Components", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "reusable-comp" , Status: "Done"},
     { lessonTitle : "15. Custom Directives", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "custom-directives", Status: "Done"},
-    { lessonTitle : "16. Services", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "services", Status: "Pending"},
-    { lessonTitle : "17. Facade", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "facade", Status: "Pending"},
+    { lessonTitle : "16. Services", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "service", Status: "Progress"},
+    { lessonTitle : "17. Facade", lessonDesc : "<ul><li>Its an <b>Structure Pattern</b> that is used as Angular service to act as a <b>single point of entry between your component and complex background process</b> like API, Business logic etc</li><li>Its an <b>abstraction layer</b> that stops component to interact with inner high level complex logic like api</li><li>Its advantages are <b>1. Simpler Component, 2. Decoupled Architechture, 2. High Reusability, 4.Easier Testing</b></li></ul>"   ,ComponentPath : "facade", Status: "Done"},
     { lessonTitle : "18. Role Based Menus", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "role-based-menus" , Status: "Pending"},
     { lessonTitle : "19. Route Guard", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "route-guard", Status: "Pending"},
     { lessonTitle : "20. JWT Token", lessonDesc : "Installation and Configuration of angular 22"   ,ComponentPath : "jwt-token", Status: "Pending"},
     { lessonTitle : "21. Interceptor", lessonDesc : "Middleware tool For inspecting, handling HTTP request and resonding gobally before request reach to server"  ,ComponentPath : "interceptor" , Status: "Done"},
-    { lessonTitle : "22. ViewChild", lessonDesc : "Query mechanism for getting reference of element, directives and child component of angular 22"   ,ComponentPath : "viewchild", Status: "Done"},
-    { lessonTitle : "23. Subject & Behavior Subject", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "subject-behaviorsubject" , Status: "Progress"},
-    { lessonTitle : "24. <ng-container> & <ng-template>", lessonDesc : "Specialized elements for managing template logic & structure without using unecessary element in Angular 22"  ,ComponentPath : "ng-container-template" , Status: "Done"},
-    { lessonTitle : "25. rxjs", lessonDesc : "Installation and Configuration of angular 22", ComponentPath : "rxjs" , Status: "Pending"},
+    { lessonTitle : "22. rxjs", lessonDesc : "<ul><li>RXJS stands for Reactive Extension for JavaScript</li><li>Its a core library used to manage asynchronous operations, event handling & data streams</li></ul>", ComponentPath : "rxjs" , Status: "Progress"},
+    { lessonTitle : "23. Subject & Behavior Subject", lessonDesc : "Installation and Configuration of angular 22"  ,ComponentPath : "subject-behaviorsubject" , Status: "Done"},
+    { lessonTitle : "24. ViewChild", lessonDesc : "Query mechanism for getting reference of element, directives and child component of angular 22"   ,ComponentPath : "viewchild", Status: "Done"},
+    { lessonTitle : "25. <ng-container> & <ng-template>", lessonDesc : "Specialized elements for managing template logic & structure without using unecessary element in Angular 22"  ,ComponentPath : "ng-container-template" , Status: "Done"},
+    
   ]
 }

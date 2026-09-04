@@ -1,0 +1,73 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 17 : Facade'" [HeaderText]="'In this chapter, We will learn about Facade structure Patter in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is Facade?<br>
+        <ul>
+            <li>Facade is an <b>structural pattern</b> that is used as angular service to act as a <b>single point of entry between the components and complex background systems like API, Business Layer</b>.</li>
+            <li>Its an <b>abstraction layer that stops component to access the inner higher level complex APIs or data</b>.</li>
+        </ul>
+    </li>
+    <li>What are the advantages of Facade?<br>
+        <ul>
+            <li> Following are the advantages of Facade : <br>
+                <ul style="list-style: decimal;">
+                    <li><b>Simpler Component</b><br>
+                        <ul>
+                            <li>It keep you component simple, readable and strictly restricted to managing presentation layer logic.</li>
+                        </ul>
+                    </li>
+                    <li><b>Decoupled Architecture</b><br>
+                        <ul>
+                            <li>As the data, business layer & apis shifts, you need to only write the interiof of facade service & your component remained untouched.</li>
+                        </ul>
+                    </li>
+                    <li><b>High Reusability</b><br>
+                        <ul>
+                            <li>Multiple components can consume the same facade methods without repeating tedious API calling or subscription chain.</li>
+                        </ul>
+                    </li>
+                    <li><b>Easier Testing</b><br>
+                        <ul>
+                            <li>Testing components become easier as you need to mock one simple facade service instead of mocking complex http request and nested state system.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>When you should avoid it?<br>
+        <ul>
+            <li>You should avoid facade for small apps or simple CRUD application where component simply fetchs a resource from a single API service.</li>
+        </ul>
+    </li>
+    <li>Syntax of Facade<br>
+        <ul>
+            <li><b>ng generate component &lt;Facade Name&gt;</b></li>
+        </ul>
+    </li>
+</ul>
+ 
+<h5>Examples :</h5><br>
+
+<h6>In this page Subject & Behavior Subject variables are defined & emits the values on user Role change in the UserRole change dropdown in home.html<br> 
+    Note: 
+    <ul style="list-style: decimal;">
+        <li>If this page is not loaded and user role is changed, then on loading this page,<br>
+            <ul>
+                <li>last emitted value will be received by BehaviorSubject and it will show the value in alert (mentiond while subscribing BehaviorSubject).</li>
+                <li>but no value is received by Subject and no alert (mentioned while subscribing Subject) will be visible </li>
+            </ul>
+        </li>
+        <li>If this page is loaded once and user role is changed,<br>
+            <ul>
+                <li>last emitted value will be received by bot Subject and BehaviorSubject and will show the value in both the alert</li>
+            </ul>
+        </li>
+        <li>If this page is loaded once and user role is changed, and the this page is loaded again<br>
+            <ul>
+                <li>last emitted value will be received by BehaviorSubject and it will show the value in alert (mentiond while subscribing BehaviorSubject).</li>
+                <li>but no value is received by Subject and no alert (mentioned while subscribing Subject) will be visible </li>
+            </ul>
+        </li>
+    </ul>
+</h6><br><br><br><br>

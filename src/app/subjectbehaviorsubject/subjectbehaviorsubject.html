@@ -1,11 +1,11 @@
-<app-mypageheader [HeaderTitle] ="'Lesson 23 : Subject & Behavior Subject'" [HeaderText]="'In this chapter, We will learn about of Subject & Behavior Subject in Angular 22'" ></app-mypageheader>
+<app-mypageheader [HeaderTitle] ="'Lesson 23 : Subject & Behavior Subject'" [HeaderText]="'In this chapter, We will learn about Subject & Behavior Subject in Angular 22'" ></app-mypageheader>
 
 <ul>
     <li>In Angular, What are Subject and BehaviorSubject?<br>
         <ul>
             <li>Subject and BehaviorSubject are special types of observables of RXJS Library, <br>
                 used to share data and manage state across different parts on application.</li>
-            <li>Unlike standard observable, which are <b>unicast</b> (each subscribers get a fresh, iolated execution), <br>
+            <li>Unlike standard observable, which are <b>unicast</b> (each subscribers get a fresh, isolated execution), <br>
                 Subject and BehaviorSubjects are <b>multicast</b>, this mean they broadcast the same data stream to multiple subscribers simultaneously.</li>
             <li>They can act both as an <b>Observable</b> (you can subscribe to them) and <b>Observer</b> (You can manually feed values into them using .next()).</li>
         </ul>
@@ -52,5 +52,25 @@
  
 <h5>Examples :</h5><br>
 
-<h5>Examples Using Classic @ViewChild:</h5><br>
-<h6>Example 1) Reading Text view using @ViewChild</h6>
+<h6>In this page Subject & Behavior Subject variables are defined & emits the values on user Role change in the UserRole change dropdown in home.html<br> 
+    Note: 
+    <ul style="list-style: decimal;">
+        <li>If this page is not loaded and user role is changed, then on loading this page,<br>
+            <ul>
+                <li>last emitted value will be received by BehaviorSubject and it will show the value in alert (mentiond while subscribing BehaviorSubject).</li>
+                <li>but no value is received by Subject and no alert (mentioned while subscribing Subject) will be visible </li>
+            </ul>
+        </li>
+        <li>If this page is loaded once and user role is changed,<br>
+            <ul>
+                <li>last emitted value will be received by bot Subject and BehaviorSubject and will show the value in both the alert</li>
+            </ul>
+        </li>
+        <li>If this page is loaded once and user role is changed, and the this page is loaded again<br>
+            <ul>
+                <li>last emitted value will be received by BehaviorSubject and it will show the value in alert (mentiond while subscribing BehaviorSubject).</li>
+                <li>but no value is received by Subject and no alert (mentioned while subscribing Subject) will be visible </li>
+            </ul>
+        </li>
+    </ul>
+</h6><br><br><br><br>

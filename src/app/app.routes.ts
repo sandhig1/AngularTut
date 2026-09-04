@@ -31,6 +31,9 @@ import { Interceptor } from './interceptor/interceptor';
 import { Viewchild } from './viewchild/viewchild';
 import { NgContainerTemplate } from './ng-container-template/ng-container-template';
 import { Subjectbehaviorsubject } from './subjectbehaviorsubject/subjectbehaviorsubject';
+import { Rxjs } from './rxjs/rxjs';
+import { Facade } from './facade/facade';
+import { Service } from './service/service';
 
 export const routes: Routes = [
     {path:'', component:Apphome},
@@ -56,10 +59,14 @@ export const routes: Routes = [
             {path:'crud-ops', component:CrudOps},
             {path:'reusable-comp', component:Reusable},
             {path:'custom-directives', component:CustomDirectives},
+            {path:'service', component:Service},
+            {path:'facade', component:Facade},
+
             {path:'interceptor', component:Interceptor},
             {path:'viewchild', component:Viewchild},
             {path:'subject-behaviorsubject', component:Subjectbehaviorsubject},
             {path:'ng-container-template', component:NgContainerTemplate},
+            {path:'rxjs', component:Rxjs},
 
             {path:'enquiry', component:Enquiry, canActivate :[roleBasedGuard]},
             {path:'enquiry/:id', component:Enquiry},

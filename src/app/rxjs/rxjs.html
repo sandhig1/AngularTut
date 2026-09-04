@@ -1,0 +1,41 @@
+<app-mypageheader [HeaderTitle] ="'Lesson 22 : rxjs'" [HeaderText]="'In this chapter, We will learn about rxjs library in Angular 22'" ></app-mypageheader>
+
+<ul>
+    <li>What is rxjs?<br>
+        <ul>
+            <li>RXJS (Reactive Extension for JavaScript) is a core library used by the angular framework to manage asynchronous operations, event handling & data stream.</li>
+            <li>Instead of relying on standard Javascript promises, Angular treats event Like, <br>
+                HTTP Response, Form Inputs, & route changes as continuous streams handled via RXJS Observables.</li>
+        </ul>
+    </li>
+    <li>What are the core concept of rxjs?<br>
+        <ul>
+            <li> Core concept of rxjs are : <br>
+                <ul style="list-style: decimal;">
+                    <li>Observable<br>
+                        <ul>
+                            <li>A data producer that emits values</li>
+                        </ul>
+                    </li>
+                    <li>Oberver/Subscriber<br>
+                        <ul>
+                            <li>The consumer that listens to objservable stream via the .subscriber() method.</li>
+                        </ul>
+                    </li>
+                    <li>Operators<br>
+                        <ul>
+                            <li>Operators are the functional methods used within .pipe() to transform, filter, or combine data streams.</li>
+                        </ul>
+                    </li>
+                    <li>Subject/BehaviourSubject<br>
+                        <ul>
+                            <li>Subject and BehaviourSubject are special type of observables that can acts as both <b>Observable</b> (Means you can listen/subscribe to it using .subscribe method)<br>
+                                and also as <b>observer</b> (Means it can emits value to the subscriber using .next() method) </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<br><br><br><br>
